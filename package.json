@@ -1,0 +1,27 @@
+{
+  "name": "js-tictactoe.github.io",
+  "version": "1.0.0",
+  "description": "A JavaScript Tic Tac Toe Game",
+  "main": "index.js",
+  "scripts": {
+    "mySass": "node-sass -w sass/ -o dist/css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barhouum7/JS-TicTacToe.github.io.git"
+  },
+  "keywords": [
+    "Game",
+    "TicTacToe",
+    "JavaScript"
+  ],
+  "author": "BHMBS Ibrahim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/barhouum7/JS-TicTacToe.github.io/issues"
+  },
+  "homepage": "https://github.com/barhouum7/JS-TicTacToe.github.io#readme",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
