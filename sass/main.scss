@@ -1,6 +1,35 @@
-$primary-color: #e2e9;
+$primary-color: #e2e3e9;
+
+@mixin shadow {
+    box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(#000,0.4);
+}
+
+@mixin shadow-inset {
+    box-shadow: inset -6px -6px 9px #fff, inset 6px 6px 9px rgba(#000, 0.4);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box; 
+}
 
 body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
     background-color: $primary-color;
-    color: #fff;
+    color: #000;
+
+    .container {
+        @include shadow;
+        width: 83vw;
+        height: 83vh;
+        margin: 50px 100px;
+        padding: 10px;
+        background-color: $primary-color;
+        border-radius: 30px;
+        text-align: center;
+        font-size: 50px;
+    }
 }

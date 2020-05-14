@@ -1,3 +1,21 @@
+*, *::before, *::after {
+  box-sizing: border-box; }
+
 body {
-  background-color: #e2e9;
-  color: #fff; }
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  background-color: #e2e3e9;
+  color: #000; }
+  body .container {
+    box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
+    width: 83vw;
+    height: 83vh;
+    margin: 50px 100px;
+    padding: 10px;
+    background-color: #e2e3e9;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 50px; }
