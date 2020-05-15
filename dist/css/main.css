@@ -1,21 +1,42 @@
 *, *::before, *::after {
   box-sizing: border-box; }
 
+:root {
+  --cell-size: 100px;
+  --mark-size: cal(var(--cell-size) * .9); }
+
 body {
-  height: 100%;
-  width: 100%;
   margin: 0;
   padding: 0;
-  justify-content: center;
   background-color: #e2e3e9;
   color: #000; }
+  body .game-title {
+    display: grid;
+    justify-content: center;
+    align-content: center; }
+  body span {
+    box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    margin-top: .7rem;
+    padding: 10px; }
   body .container {
     box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
     width: 83vw;
     height: 83vh;
-    margin: 50px 100px;
+    margin: 1rem 100px;
     padding: 10px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
     background-color: #e2e3e9;
     border-radius: 30px;
-    text-align: center;
     font-size: 50px; }
+  body .cell {
+    box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
+    width: var(--cell-size);
+    height: var(--cell-size); }

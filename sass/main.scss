@@ -12,24 +12,54 @@ $primary-color: #e2e3e9;
     box-sizing: border-box; 
 }
 
+:root {
+    --cell-size: 100px;
+    --mark-size: cal(var(--cell-size) * .9);
+}
+
 body {
-    height: 100%;
-    width: 100%;
     margin: 0;
     padding: 0;
-    justify-content: center;
     background-color: $primary-color;
     color: #000;
+
+    .game-title {
+        display: grid;
+        justify-content: center;
+        align-content: center;
+    }
+
+    span {
+        @include shadow();
+        border-radius: 10px;
+        text-align: center;
+        width: 200px;
+        margin-top: .7rem;
+        padding: 10px;
+    }
 
     .container {
         @include shadow;
         width: 83vw;
         height: 83vh;
-        margin: 50px 100px;
+        margin: 1rem 100px;
         padding: 10px;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: repeat(3, auto);
         background-color: $primary-color;
         border-radius: 30px;
-        text-align: center;
         font-size: 50px;
+    }
+
+    .cell {
+        @include shadow;
+        width: var(--cell-size);
+        height: var(--cell-size);
+        // background-color: #e2e3e9;
+        // border: 1px solid #000;
     }
 }
