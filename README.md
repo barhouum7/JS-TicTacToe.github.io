@@ -1,5 +1,5 @@
 # JS-TicTacToe.github.io
-I'm going to build a Tic Tac Toe Game using JavaScript.
+I'm going to build a Neumorphic styled Tic Tac Toe Game using JavaScript.
 # My Project Notes
 ###### Click Here For Demo: https://barhouum7.github.io/JS-TicTacToe.github.io/
 ---
