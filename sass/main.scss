@@ -8,6 +8,10 @@ $primary-color: #e2e3e9;
     box-shadow: inset -6px -6px 9px #fff, inset 6px 6px 9px rgba(#000, 0.4);
 }
 
+@mixin text-shadow {
+    text-shadow: -9px -9px 9px #fff, 9px 9px 9px rgba(#000,0.4);
+}
+
 *, *::before, *::after {
     box-sizing: border-box; 
 }
@@ -31,6 +35,8 @@ body {
 
     span {
         @include shadow();
+        // @include text-shadow();
+        text-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(#000,0.4);
         border-radius: 10px;
         text-align: center;
         width: 200px;
@@ -57,9 +63,16 @@ body {
 
     .cell {
         @include shadow;
+        @include text-shadow;
+        display: grid;
+        align-items: center;
         width: var(--cell-size);
         height: var(--cell-size);
         // background-color: #e2e3e9;
         // border: 1px solid #000;
+        text-align: center;
+        color: #000;
+
+        
     }
 }

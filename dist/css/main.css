@@ -16,6 +16,7 @@ body {
     align-content: center; }
   body span {
     box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
+    text-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     text-align: center;
     width: 200px;
@@ -38,5 +39,10 @@ body {
     font-size: 50px; }
   body .cell {
     box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
+    text-shadow: -9px -9px 9px #fff, 9px 9px 9px rgba(0, 0, 0, 0.4);
+    display: grid;
+    align-items: center;
     width: var(--cell-size);
-    height: var(--cell-size); }
+    height: var(--cell-size);
+    text-align: center;
+    color: #000; }
