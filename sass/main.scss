@@ -12,6 +12,10 @@ $primary-color: #e2e3e9;
     text-shadow: -9px -9px 9px #fff, 9px 9px 9px rgba(#000,0.4);
 }
 
+@mixin XOs-shadow {
+    box-shadow: 9px 9px 9px rgba(#000,0.4);
+}
+
 *, *::before, *::after {
     box-sizing: border-box; 
 }
@@ -72,37 +76,67 @@ body {
             // border: 1px solid #000;
             text-align: center;
             color: #000;
+            cursor: pointer;
+
+            &.x, &.circle {
+                cursor: not-allowed;
+            }
+
         }
-        .x::before,
-        .x::after {
+        & .x::before,
+        & .x::after,
+        & .circle::before {
+            background-color: #000;
+        }
+        
+        &.x :not(.x):not(.circle):hover::before,
+        &.x :not(.x):not(.circle):hover::after,
+        &.circle :not(.x):not(.circle):hover::before {
+            background-color: rgba(87, 104, 93, 0.199);
+        }
+
+        & .x::before,
+        & .x::after,
+        &.x :not(.x):not(.circle):hover::before,
+        &.x :not(.x):not(.circle):hover::after {
             content: '';
+            @include XOs-shadow;
             position: absolute;
             width: calc(var(--mark-size) * .15);
             height: calc(var(--mark-size) * .8);
-            background-color: #000;
         }
-        .x::before {
+        & .x::before,
+        &.x :not(.x):not(.circle):hover::before {
             transform: rotate(45deg);
         }
-        .x::after {
+        & .x::after,
+        &.x :not(.x):not(.circle):hover::after {
             transform: rotate(-45deg);
         }
-        .circle::before,
-        .circle::after {
+    
+        
+        & .circle::before,
+        & .circle::after,
+        &.circle :not(.x):not(.circle):hover::before,
+        &.circle :not(.x):not(.circle):hover::after {
             content: '';
+            @include XOs-shadow;
             position: absolute;
             border-radius: 50%;
         }
-        .circle::before {
+        & .circle::before,
+        &.circle :not(.x):not(.circle):hover::before {
             width: calc(var(--mark-size) * .8);
             height: calc(var(--mark-size) * .8);
-            background-color: #000;
         }
-        .circle::after {
+        & .circle::after,
+        &.circle :not(.x):not(.circle):hover::after {
+            @include shadow-inset;
             width: calc(var(--mark-size) * .5);
             height: calc(var(--mark-size) * .5);
-            background-color: #fff;
+            background-color: #e2e3e9;
         }
+
     }
 
 }

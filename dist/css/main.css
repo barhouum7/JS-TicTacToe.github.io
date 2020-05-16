@@ -46,28 +46,48 @@ body {
       width: var(--cell-size);
       height: var(--cell-size);
       text-align: center;
-      color: #000; }
+      color: #000;
+      cursor: pointer; }
+      body .container .cell.x, body .container .cell.circle {
+        cursor: not-allowed; }
     body .container .x::before,
-    body .container .x::after {
+    body .container .x::after,
+    body .container .circle::before {
+      background-color: #000; }
+    body .container.x :not(.x):not(.circle):hover::before,
+    body .container.x :not(.x):not(.circle):hover::after,
+    body .container.circle :not(.x):not(.circle):hover::before {
+      background-color: rgba(87, 104, 93, 0.199); }
+    body .container .x::before,
+    body .container .x::after,
+    body .container.x :not(.x):not(.circle):hover::before,
+    body .container.x :not(.x):not(.circle):hover::after {
       content: '';
+      box-shadow: 9px 9px 9px rgba(0, 0, 0, 0.4);
       position: absolute;
       width: calc(var(--mark-size) * .15);
-      height: calc(var(--mark-size) * .8);
-      background-color: #000; }
-    body .container .x::before {
+      height: calc(var(--mark-size) * .8); }
+    body .container .x::before,
+    body .container.x :not(.x):not(.circle):hover::before {
       transform: rotate(45deg); }
-    body .container .x::after {
+    body .container .x::after,
+    body .container.x :not(.x):not(.circle):hover::after {
       transform: rotate(-45deg); }
     body .container .circle::before,
-    body .container .circle::after {
+    body .container .circle::after,
+    body .container.circle :not(.x):not(.circle):hover::before,
+    body .container.circle :not(.x):not(.circle):hover::after {
       content: '';
+      box-shadow: 9px 9px 9px rgba(0, 0, 0, 0.4);
       position: absolute;
       border-radius: 50%; }
-    body .container .circle::before {
+    body .container .circle::before,
+    body .container.circle :not(.x):not(.circle):hover::before {
       width: calc(var(--mark-size) * .8);
-      height: calc(var(--mark-size) * .8);
-      background-color: #000; }
-    body .container .circle::after {
+      height: calc(var(--mark-size) * .8); }
+    body .container .circle::after,
+    body .container.circle :not(.x):not(.circle):hover::after {
+      box-shadow: inset -6px -6px 9px #fff, inset 6px 6px 9px rgba(0, 0, 0, 0.4);
       width: calc(var(--mark-size) * .5);
       height: calc(var(--mark-size) * .5);
-      background-color: #fff; }
+      background-color: #e2e3e9; }
