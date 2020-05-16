@@ -8,7 +8,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #e2e3e9;
+  background-color: #e9e9e9;
   color: #000; }
   body .game-title {
     display: grid;
@@ -34,7 +34,7 @@ body {
     justify-items: center;
     align-items: center;
     grid-template-columns: repeat(3, auto);
-    background-color: #e2e3e9;
+    background-color: #e9e9e9;
     border-radius: 30px;
     font-size: 50px; }
     body .container .cell {
@@ -90,4 +90,4 @@ body {
       box-shadow: inset -6px -6px 9px #fff, inset 6px 6px 9px rgba(0, 0, 0, 0.4);
       width: calc(var(--mark-size) * .5);
       height: calc(var(--mark-size) * .5);
-      background-color: #e2e3e9; }
+      background-color: #e9e9e9; }

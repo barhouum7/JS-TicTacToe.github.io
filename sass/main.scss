@@ -1,4 +1,4 @@
-$primary-color: #e2e3e9;
+$primary-color: #e9e9e9;
 
 @mixin shadow {
     box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(#000,0.4);
@@ -72,7 +72,7 @@ body {
             position: relative;
             width: var(--cell-size);
             height: var(--cell-size);
-            // background-color: #e2e3e9;
+            // background-color:  $primary-color;
             // border: 1px solid #000;
             text-align: center;
             color: #000;
@@ -134,7 +134,7 @@ body {
             @include shadow-inset;
             width: calc(var(--mark-size) * .5);
             height: calc(var(--mark-size) * .5);
-            background-color: #e2e3e9;
+            background-color: $primary-color;
         }
 
     }
