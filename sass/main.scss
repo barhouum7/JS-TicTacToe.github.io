@@ -18,7 +18,7 @@ $primary-color: #e2e3e9;
 
 :root {
     --cell-size: 100px;
-    --mark-size: cal(var(--cell-size) * .9);
+    --mark-size: calc(var(--cell-size) * .9);
 }
 
 body {
@@ -30,19 +30,19 @@ body {
     .game-title {
         display: grid;
         justify-content: center;
-        align-content: center;
+        align-content: center;        
+        span {
+            @include shadow();
+            // @include text-shadow();
+            text-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(#000,0.4);
+            border-radius: 10px;
+            text-align: center;
+            width: 200px;
+            margin-top: .7rem;
+            padding: 10px;
+        }
     }
 
-    span {
-        @include shadow();
-        // @include text-shadow();
-        text-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(#000,0.4);
-        border-radius: 10px;
-        text-align: center;
-        width: 200px;
-        margin-top: .7rem;
-        padding: 10px;
-    }
 
     .container {
         @include shadow;
@@ -59,20 +59,50 @@ body {
         background-color: $primary-color;
         border-radius: 30px;
         font-size: 50px;
+        .cell {
+            @include shadow;
+            // @include text-shadow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: var(--cell-size);
+            height: var(--cell-size);
+            // background-color: #e2e3e9;
+            // border: 1px solid #000;
+            text-align: center;
+            color: #000;
+        }
+        .x::before,
+        .x::after {
+            content: '';
+            position: absolute;
+            width: calc(var(--mark-size) * .15);
+            height: calc(var(--mark-size) * .8);
+            background-color: #000;
+        }
+        .x::before {
+            transform: rotate(45deg);
+        }
+        .x::after {
+            transform: rotate(-45deg);
+        }
+        .circle::before,
+        .circle::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+        }
+        .circle::before {
+            width: calc(var(--mark-size) * .8);
+            height: calc(var(--mark-size) * .8);
+            background-color: #000;
+        }
+        .circle::after {
+            width: calc(var(--mark-size) * .5);
+            height: calc(var(--mark-size) * .5);
+            background-color: #fff;
+        }
     }
 
-    .cell {
-        @include shadow;
-        @include text-shadow;
-        display: grid;
-        align-items: center;
-        width: var(--cell-size);
-        height: var(--cell-size);
-        // background-color: #e2e3e9;
-        // border: 1px solid #000;
-        text-align: center;
-        color: #000;
-
-        
-    }
 }

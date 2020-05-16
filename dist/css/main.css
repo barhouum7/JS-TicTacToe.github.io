@@ -3,7 +3,7 @@
 
 :root {
   --cell-size: 100px;
-  --mark-size: cal(var(--cell-size) * .9); }
+  --mark-size: calc(var(--cell-size) * .9); }
 
 body {
   margin: 0;
@@ -14,14 +14,14 @@ body {
     display: grid;
     justify-content: center;
     align-content: center; }
-  body span {
-    box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
-    text-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-    text-align: center;
-    width: 200px;
-    margin-top: .7rem;
-    padding: 10px; }
+    body .game-title span {
+      box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
+      text-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      text-align: center;
+      width: 200px;
+      margin-top: .7rem;
+      padding: 10px; }
   body .container {
     box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
     width: 83vw;
@@ -37,12 +37,37 @@ body {
     background-color: #e2e3e9;
     border-radius: 30px;
     font-size: 50px; }
-  body .cell {
-    box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
-    text-shadow: -9px -9px 9px #fff, 9px 9px 9px rgba(0, 0, 0, 0.4);
-    display: grid;
-    align-items: center;
-    width: var(--cell-size);
-    height: var(--cell-size);
-    text-align: center;
-    color: #000; }
+    body .container .cell {
+      box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: var(--cell-size);
+      height: var(--cell-size);
+      text-align: center;
+      color: #000; }
+    body .container .x::before,
+    body .container .x::after {
+      content: '';
+      position: absolute;
+      width: calc(var(--mark-size) * .15);
+      height: calc(var(--mark-size) * .8);
+      background-color: #000; }
+    body .container .x::before {
+      transform: rotate(45deg); }
+    body .container .x::after {
+      transform: rotate(-45deg); }
+    body .container .circle::before,
+    body .container .circle::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%; }
+    body .container .circle::before {
+      width: calc(var(--mark-size) * .8);
+      height: calc(var(--mark-size) * .8);
+      background-color: #000; }
+    body .container .circle::after {
+      width: calc(var(--mark-size) * .5);
+      height: calc(var(--mark-size) * .5);
+      background-color: #fff; }
