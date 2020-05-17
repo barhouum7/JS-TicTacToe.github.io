@@ -30,3 +30,7 @@ function handleClick(event) {
     placeShadowMark()
 
 }
+
+function placeMark(cell, currentMark) {
+    cell.classList.add(currentMark)
+}
