@@ -44,3 +44,7 @@ function placeShadowMark() {
         board.classList.add(X_SHADOW_CLASS)
     }
 }
+
+function swapMark() {
+    circleMarkTurn = !circleMarkTurn
+}
