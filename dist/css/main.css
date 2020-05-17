@@ -46,6 +46,8 @@ body {
       box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
       display: flex;
       justify-content: center;
+      align-content: center;
+      justify-items: center;
       align-items: center;
       position: relative;
       width: var(--cell-size);

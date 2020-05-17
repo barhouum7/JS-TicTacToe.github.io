@@ -73,6 +73,8 @@ body {
             // @include text-shadow;
             display: flex;
             justify-content: center;
+            align-content: center;
+            justify-items: center;
             align-items: center;
             position: relative;
             width: var(--cell-size);
