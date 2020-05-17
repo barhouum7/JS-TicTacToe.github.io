@@ -34,3 +34,13 @@ function handleClick(event) {
 function placeMark(cell, currentMark) {
     cell.classList.add(currentMark)
 }
+
+function placeShadowMark() {
+    board.classList.remove(CIRCLE_SHADOW_CLASS)
+    board.classList.remove(X_SHADOW_CLASS)
+    if (circleMarkTurn && userMarkChoice.toUpperCase() === 'X') {
+        board.classList.add(CIRCLE_SHADOW_CLASS)
+    } else {
+        board.classList.add(X_SHADOW_CLASS)
+    }
+}
