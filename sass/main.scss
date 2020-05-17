@@ -30,6 +30,11 @@ body {
     padding: 0;
     background-color: $primary-color;
     color: #000;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
 
     .game-title {
         display: grid;
@@ -136,7 +141,45 @@ body {
             height: calc(var(--mark-size) * .5);
             background-color: $primary-color;
         }
+    }
+    
+    .winning-message {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 5rem;
+        flex-direction: column-reverse;
 
+        div {
+            margin-top: 2rem;
+            text-shadow: 1px 1px 100px rgba($color: #fff, $alpha: 1);
+        }
+
+        button {
+            @include shadow-inset;
+            font-size: 3rem;
+            background-color: $primary-color;
+            border: 1px solid black;
+            padding: .25em .5em;
+            margin-bottom: 1rem;
+            outline: none;
+            border-radius: 10px;
+            cursor: pointer;
+            
+            &:hover {
+                box-shadow: 1px 1px 100px rgba($color: #ffffff, $alpha: .3);
+                background-color: black;
+                color: white;
+                border-color: white;
+            }
+        }
     }
 
 }
