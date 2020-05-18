@@ -38,10 +38,18 @@ function placeMark(cell, currentMark) {
 function placeShadowMark() {
     board.classList.remove(CIRCLE_SHADOW_CLASS)
     board.classList.remove(X_SHADOW_CLASS)
-    if (circleMarkTurn && userMarkChoice.toUpperCase() === 'X') {
-        board.classList.add(CIRCLE_SHADOW_CLASS)
+    if (userMarkChoice.toUpperCase() === 'X') {
+        if (circleMarkTurn) {
+            board.classList.add(CIRCLE_SHADOW_CLASS)
+        } else {
+            board.classList.add(X_SHADOW_CLASS)
+        }
     } else {
-        board.classList.add(X_SHADOW_CLASS)
+        if (!circleMarkTurn) {
+            board.classList.add(CIRCLE_SHADOW_CLASS)
+        } else {
+            board.classList.add(X_SHADOW_CLASS)
+        }
     }
 }
 
