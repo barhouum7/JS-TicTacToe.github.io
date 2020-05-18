@@ -9,11 +9,21 @@ const userMarkChoice = prompt("Hi Dear Hero, You Want To Play By `X` or `O`", "X
 
 
 let circleMarkTurn
-placeShadowMark()
 
-cellElements.forEach(cell => {
-    cell.addEventListener('click', handleClick, { once: true })
-})
+startGame()
+
+function startGame() {
+    if (userMarkChoice.toUpperCase() === 'O') {
+        circleMarkTurn = true
+    }
+    cellElements.forEach(cell => {
+        cell.addEventListener('click', handleClick, { once: true })
+    })
+    if (userMarkChoice.toUpperCase() === 'O') {
+        circleMarkTurn = false
+    }
+    placeShadowMark()
+}
 
 function handleClick(event) {
     let cell = event.target
