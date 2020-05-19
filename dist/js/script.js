@@ -19,9 +19,6 @@ function startGame() {
     cellElements.forEach(cell => {
         cell.addEventListener('click', handleClick, { once: true })
     })
-    if (userMarkChoice.toUpperCase() === 'O') {
-        circleMarkTurn = false
-    }
     placeShadowMark()
 }
 
@@ -48,14 +45,14 @@ function placeMark(cell, currentMark) {
 function placeShadowMark() {
     board.classList.remove(CIRCLE_SHADOW_CLASS)
     board.classList.remove(X_SHADOW_CLASS)
-    if (userMarkChoice.toUpperCase() === 'X') {
+    if (userMarkChoice.toUpperCase() !== 'X') {
         if (circleMarkTurn) {
             board.classList.add(CIRCLE_SHADOW_CLASS)
         } else {
             board.classList.add(X_SHADOW_CLASS)
         }
     } else {
-        if (!circleMarkTurn) {
+        if (circleMarkTurn) {
             board.classList.add(CIRCLE_SHADOW_CLASS)
         } else {
             board.classList.add(X_SHADOW_CLASS)
