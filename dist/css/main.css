@@ -2,12 +2,11 @@
   box-sizing: border-box; }
 
 :root {
-  --cell-size: 100px;
+  --cell-size: 80px;
   --mark-size: calc(var(--cell-size) * .9); }
 
 body {
   margin: 0;
-  padding: 0;
   background-color: #e9e9e9;
   color: #000;
   display: grid;
@@ -26,11 +25,16 @@ body {
       text-align: center;
       width: 200px;
       margin-top: .7rem;
-      padding: 10px; }
+      padding: 10px;
+      color: #494d4dfb;
+      font-family: cursive;
+      font-size: .8em; }
+      body .game-title span b {
+        font-size: 1.09rem; }
   body .container {
     box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
-    width: 83vw;
-    height: 83vh;
+    width: 70vw;
+    height: 70vh;
     margin: 1rem 100px;
     padding: 10px;
     display: grid;
@@ -44,7 +48,7 @@ body {
     font-size: 50px; }
     body .container .cell {
       box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
-      display: flex;
+      display: grid;
       justify-content: center;
       align-content: center;
       justify-items: center;
