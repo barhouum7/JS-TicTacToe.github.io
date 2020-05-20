@@ -19,7 +19,7 @@ const restartButton = document.getElementById('restartButton')
 const cellElements = document.querySelectorAll('[data-cell]')
 const userInfo = document.querySelector('.infos')
 
-const userMarkChoice = prompt("Hi Dear Hero, You Want To Play By `X` or `O`", "X or O")
+let userMarkChoice = prompt("Hi Dear Hero, You Want To Play By `X` or `O`", "X or O")
 
 
 let circleMarkTurn
@@ -31,6 +31,29 @@ restartButton.addEventListener('click', startGame)
 function startGame() {
     if (userMarkChoice.toUpperCase() === 'O') {
         circleMarkTurn = true
+    }
+
+    restartButton.onclick = () => {
+        // console.log('You clicked me!')
+        if (userMarkChoice.toUpperCase() === 'X') {
+            changeUserMarkChoice = prompt("Hi Dear Hero, You Want CHANGE Your Mark FROM `X` To `O` ?  Y/N", "Y/N")
+            if (changeUserMarkChoice.toUpperCase() === 'Y') {
+                changeUserMarkChoice = 'O'
+                userMarkChoice = changeUserMarkChoice
+            } else {
+                changeUserMarkChoice = 'X'
+                userMarkChoice = changeUserMarkChoice
+            }
+        } else {
+            changeUserMarkChoice = prompt("Hi Dear Hero, You Want CHANGE Your Mark FROM `O` To `X` ?  Y/N", "Y/N")
+            if (changeUserMarkChoice.toUpperCase() === 'Y') {
+                changeUserMarkChoice = 'X'
+                userMarkChoice = changeUserMarkChoice
+            } else {
+                changeUserMarkChoice = 'O'
+                userMarkChoice = changeUserMarkChoice
+            }
+        }
     }
 
     if (userMarkChoice.toUpperCase() === 'X') {
