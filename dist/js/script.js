@@ -19,7 +19,7 @@ const restartButton = document.getElementById('restartButton')
 const cellElements = document.querySelectorAll('[data-cell]')
 const userInfo = document.querySelector('.infos')
 
-let userMarkChoice = prompt("Hi Dear Hero, You Want To Play By `X` or `O`", "X or O")
+var userMarkChoice = prompt("Hi Dear Hero, You Want To Play By `X` or `O`", "X or O")
 
 
 let circleMarkTurn
@@ -29,14 +29,17 @@ startGame()
 restartButton.addEventListener('click', startGame)
 
 function startGame() {
+
     if (userMarkChoice.toUpperCase() === 'O') {
         circleMarkTurn = true
+    } else if (userMarkChoice.toUpperCase() === 'X') {
+        circleMarkTurn = false
     }
 
     restartButton.onclick = () => {
         // console.log('You clicked me!')
         if (userMarkChoice.toUpperCase() === 'X') {
-            changeUserMarkChoice = prompt("Hi Dear Hero, You Want CHANGE Your Mark FROM `X` To `O` ?  Y/N", "Y/N")
+            changeUserMarkChoice = prompt("Hi Dear Hero, You Want To CHANGE Your Mark FROM `X` To `O` ?  Y/N", "Y/N")
             if (changeUserMarkChoice.toUpperCase() === 'Y') {
                 changeUserMarkChoice = 'O'
                 userMarkChoice = changeUserMarkChoice
@@ -44,8 +47,8 @@ function startGame() {
                 changeUserMarkChoice = 'X'
                 userMarkChoice = changeUserMarkChoice
             }
-        } else {
-            changeUserMarkChoice = prompt("Hi Dear Hero, You Want CHANGE Your Mark FROM `O` To `X` ?  Y/N", "Y/N")
+        } else if (userMarkChoice.toUpperCase() === 'O') {
+            changeUserMarkChoice = prompt("Hi Dear Hero, You Want To CHANGE Your Mark FROM `O` To `X` ?  Y/N", "Y/N")
             if (changeUserMarkChoice.toUpperCase() === 'Y') {
                 changeUserMarkChoice = 'X'
                 userMarkChoice = changeUserMarkChoice
@@ -98,7 +101,7 @@ function handleClick(event) {
 
 function endGame(drow) {
     if (drow) {
-        winningMessageTextElement = 'Drow!'
+        winningMessageTextElement.innerText = 'Drow!'
     } else {
         winningMessageTextElement.innerText = `${circleMarkTurn ? "O's" : "X's"} Wins!`
     }
