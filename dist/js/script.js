@@ -13,6 +13,8 @@ const WINNING_COMBINATIONS = [
     [2, 4, 6]
 ]
 const board = document.getElementById('board')
+const winningMessageElement = document.getElementById('winningMessage')
+const winningMessageTextElement = document.querySelector('[data-winning-message-text]')
 const cellElements = document.querySelectorAll('[data-cell]')
 const userInfo = document.querySelector('.infos')
 
@@ -49,7 +51,7 @@ function handleClick(event) {
     // 1 - PlaceMark
     placeMark(cell, currentClass)
     if (checkWin(currentClass)) {
-        console.log('Winner!')
+        endGame(false)
     }
     // 2 - Check For Wins?
     // 3 - Check For Drow?
@@ -58,6 +60,15 @@ function handleClick(event) {
     // 0 - Place Shadow of Mark
     placeShadowMark()
 
+}
+
+function endGame(drow) {
+    if (drow) {
+
+    } else {
+        winningMessageTextElement.innerText = `${circleMarkTurn ? "O's" : "X's"} Wins!`
+    }
+    winningMessageElement.classList.add('show')
 }
 
 function placeMark(cell, currentClass) {
