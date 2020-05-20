@@ -2,7 +2,7 @@ const X_CLASS = 'x'
 const CIRCLE_CLASS = 'circle'
 const X_SHADOW_CLASS = 'x'
 const CIRCLE_SHADOW_CLASS = 'circle'
-const WINNING_CONBINATIONS = [
+const WINNING_COMBINATIONS = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -44,11 +44,13 @@ function startGame() {
 
 function handleClick(event) {
     let cell = event.target
-    let currentMark = circleMarkTurn ? CIRCLE_CLASS : X_CLASS
+    let currentClass = circleMarkTurn ? CIRCLE_CLASS : X_CLASS
 
     // 1 - PlaceMark
-    placeMark(cell, currentMark)
-
+    placeMark(cell, currentClass)
+    if (checkWin(currentClass)) {
+        console.log('Winner!')
+    }
     // 2 - Check For Wins?
     // 3 - Check For Drow?
     // 4 - Else Switch Turns
@@ -58,8 +60,8 @@ function handleClick(event) {
 
 }
 
-function placeMark(cell, currentMark) {
-    cell.classList.add(currentMark)
+function placeMark(cell, currentClass) {
+    cell.classList.add(currentClass)
 }
 
 function placeShadowMark() {
@@ -74,4 +76,12 @@ function placeShadowMark() {
 
 function swapMark() {
     circleMarkTurn = !circleMarkTurn
+}
+
+function checkWin(currentClass) {
+    return WINNING_COMBINATIONS.some(combination => {
+        return combination.every(index => {
+            return cellElements[index].classList.contains(currentClass)
+        })
+    })
 }
