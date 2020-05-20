@@ -15,6 +15,7 @@ const WINNING_COMBINATIONS = [
 const board = document.getElementById('board')
 const winningMessageElement = document.getElementById('winningMessage')
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]')
+const restartButton = document.getElementById('restartButton')
 const cellElements = document.querySelectorAll('[data-cell]')
 const userInfo = document.querySelector('.infos')
 
@@ -24,6 +25,8 @@ const userMarkChoice = prompt("Hi Dear Hero, You Want To Play By `X` or `O`", "X
 let circleMarkTurn
 
 startGame()
+
+restartButton.addEventListener('click', startGame)
 
 function startGame() {
     if (userMarkChoice.toUpperCase() === 'O') {
@@ -39,9 +42,13 @@ function startGame() {
     }
 
     cellElements.forEach(cell => {
+        cell.classList.remove(X_CLASS)
+        cell.classList.remove(CIRCLE_CLASS)
+        cell.removeEventListener('click', handleClick)
         cell.addEventListener('click', handleClick, { once: true })
     })
     placeShadowMark()
+    winningMessageElement.classList.remove('show')
 }
 
 function handleClick(event) {
