@@ -52,23 +52,33 @@ function handleClick(event) {
     placeMark(cell, currentClass)
     if (checkWin(currentClass)) {
         endGame(false)
+    } else if (isDrow()) {
+        endGame(true)
+    } else {
+        swapMark()
+        placeShadowMark()
     }
+
+    // 0 - Place Shadow of Mark
     // 2 - Check For Wins?
     // 3 - Check For Drow?
     // 4 - Else Switch Turns
-    swapMark()
-    // 0 - Place Shadow of Mark
-    placeShadowMark()
 
 }
 
 function endGame(drow) {
     if (drow) {
-
+        winningMessageTextElement = 'Drow!'
     } else {
         winningMessageTextElement.innerText = `${circleMarkTurn ? "O's" : "X's"} Wins!`
     }
     winningMessageElement.classList.add('show')
+}
+
+function isDrow() {
+    return [...cellElements].every(cell => {
+        return cell.classList.contains(CIRCLE_CLASS) || cell.classList.contains(X_CLASS)
+    })
 }
 
 function placeMark(cell, currentClass) {
