@@ -56,6 +56,15 @@ function startGame() {
                 changeUserMarkChoice = 'O'
                 userMarkChoice = changeUserMarkChoice
             }
+        } else {
+            changeUserMarkChoice = prompt("Hi Dear Hero, You Want To CHANGE Your Mark FROM `X` To `O` ?  Y/N", "Y/N")
+            if (changeUserMarkChoice.toUpperCase() === 'Y') {
+                changeUserMarkChoice = 'O'
+                userMarkChoice = changeUserMarkChoice
+            } else {
+                changeUserMarkChoice = 'X'
+                userMarkChoice = changeUserMarkChoice
+            }
         }
     }
 
