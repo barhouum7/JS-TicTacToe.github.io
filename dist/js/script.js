@@ -110,7 +110,7 @@ function handleClick(event) {
 
 function endGame(drow) {
     if (drow) {
-        winningMessageTextElement.innerText = 'Drow!'
+        winningMessageTextElement.innerText = 'Draw!'
     } else {
         winningMessageTextElement.innerText = `${circleMarkTurn ? "O's" : "X's"} Wins!`
     }
