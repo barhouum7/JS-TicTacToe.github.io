@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box; }
 
 :root {
@@ -34,7 +36,7 @@ body {
   body .container {
     box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
     width: 70vw;
-    height: 70vh;
+    height: 65vh;
     margin: 1rem 100px;
     padding: 10px;
     display: grid;
@@ -135,3 +137,71 @@ body {
         background-color: black;
         color: white;
         border-color: white; }
+  body .site-footer {
+    color: #645959;
+    margin-top: 1px;
+    width: 35vw;
+    font-size: 12px;
+    line-height: 2px;
+    font-family: monospace; }
+    body .site-footer .github-link {
+      text-shadow: -9px -9px 9px #fff, 9px 9px 9px rgba(0, 0, 0, 0.4);
+      margin-top: 5px; }
+      body .site-footer .github-link:hover {
+        -webkit-transition: all 1s ease-out;
+        -moz-transition: all 1s ease-out;
+        transition: all 1s ease-out;
+        background-color: burlywood;
+        padding-right: 50px;
+        transition: padding-right .5s, background-color 1s; }
+      body .site-footer .github-link a {
+        text-shadow: -9px -9px 9px #fff, 9px 9px 9px rgba(0, 0, 0, 0.4);
+        color: #3e4050;
+        font-family: Trebuchet MS;
+        font-size: 1rem; }
+        body .site-footer .github-link a:hover {
+          color: #000000;
+          text-decoration: none; }
+    body .site-footer .social-icons {
+      text-align: right;
+      padding-left: 0;
+      /* margin-bottom: 0; */
+      list-style: none;
+      margin-top: 20px;
+      transform: translate(-26%, -5%); }
+      body .site-footer .social-icons a {
+        box-shadow: 8px 8px 20px #2b2d3410, -8px -8px 50px #3b3d4693;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        margin-left: 6px;
+        margin-right: 0;
+        background-color: #33353d;
+        color: #818a91;
+        font-size: 16px;
+        display: inline-block;
+        text-align: center;
+        transform: translate(-5%, -5%);
+        border-radius: 100%;
+        -webkit-transition: all .2s linear;
+        -o-transition: all .2s linear;
+        transition: all .2s linear; }
+        body .site-footer .social-icons a:active, body .site-footer .social-icons a:focus, body .site-footer .social-icons a:hover {
+          box-shadow: inset 8px 8px 16px #2b2d34, inset -8px -8px 16px #3b3d46;
+          background-color: #33353d; }
+      body .site-footer .social-icons li {
+        display: inline-block;
+        /* margin-bottom: 0; */ }
+  @media (max-width: 991px) {
+    body .site-footer [class^=col-] {
+      margin-bottom: 20px; } }
+  @media (max-width: 767px) {
+    body .social-icons li.title {
+      display: block;
+      margin-right: 0;
+      font-weight: 600; }
+    body .site-footer {
+      padding-bottom: 0; }
+    body .site-footer .copyright-text,
+    body .site-footer .social-icons {
+      text-align: center; } }

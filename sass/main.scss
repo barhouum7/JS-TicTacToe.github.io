@@ -1,7 +1,7 @@
 $primary-color: #e9e9e9;
 
 @mixin shadow {
-    box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(#000,0.4);
+    box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(#000, 0.4);
 }
 
 @mixin shadow-inset {
@@ -9,15 +9,27 @@ $primary-color: #e9e9e9;
 }
 
 @mixin text-shadow {
-    text-shadow: -9px -9px 9px #fff, 9px 9px 9px rgba(#000,0.4);
+    text-shadow: -9px -9px 9px #fff, 9px 9px 9px rgba(#000, 0.4);
+}
+
+@mixin inset-text-shadow {
+    text-shadow: inset -9px -9px 9px #fff, inset 9px 9px 9px rgba(#000, 0.4);
 }
 
 @mixin XOs-shadow {
-    box-shadow: 9px 9px 9px rgba(#000,0.4);
+    box-shadow: 9px 9px 9px rgba(#000, 0.4);
 }
 
-*, *::before, *::after {
-    box-sizing: border-box; 
+@mixin easeOut {
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 :root {
@@ -38,11 +50,12 @@ body {
     .game-title {
         display: grid;
         justify-content: center;
-        align-content: center;        
+        align-content: center;
+
         span {
             @include shadow();
             // @include text-shadow();
-            text-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(#000,0.4);
+            text-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(#000, 0.4);
             border-radius: 10px;
             text-align: center;
             width: 200px;
@@ -51,6 +64,7 @@ body {
             color: #494d4dfb;
             font-family: cursive;
             font-size: .8em;
+
             b {
                 font-size: 1.09rem;
             }
@@ -61,7 +75,7 @@ body {
     .container {
         @include shadow;
         width: 70vw;
-        height: 70vh;
+        height: 65vh;
         margin: 1rem 100px;
         padding: 10px;
         display: grid;
@@ -73,6 +87,7 @@ body {
         background-color: $primary-color;
         border-radius: 30px;
         font-size: 50px;
+
         .cell {
             @include shadow;
             // @include text-shadow;
@@ -90,17 +105,19 @@ body {
             color: #000;
             cursor: pointer;
 
-            &.x, &.circle {
+            &.x,
+            &.circle {
                 cursor: not-allowed;
             }
 
         }
+
         & .x::before,
         & .x::after,
         & .circle::before {
             background-color: #000;
         }
-        
+
         &.x :not(.x):not(.circle):hover::before,
         &.x :not(.x):not(.circle):hover::after,
         &.circle :not(.x):not(.circle):hover::before {
@@ -117,16 +134,18 @@ body {
             width: calc(var(--mark-size) * .15);
             height: calc(var(--mark-size) * .8);
         }
+
         & .x::before,
         &.x :not(.x):not(.circle):hover::before {
             transform: rotate(45deg);
         }
+
         & .x::after,
         &.x :not(.x):not(.circle):hover::after {
             transform: rotate(-45deg);
         }
-    
-        
+
+
         & .circle::before,
         & .circle::after,
         &.circle :not(.x):not(.circle):hover::before,
@@ -136,11 +155,13 @@ body {
             position: absolute;
             border-radius: 50%;
         }
+
         & .circle::before,
         &.circle :not(.x):not(.circle):hover::before {
             width: calc(var(--mark-size) * .8);
             height: calc(var(--mark-size) * .8);
         }
+
         & .circle::after,
         &.circle :not(.x):not(.circle):hover::after {
             @include shadow-inset;
@@ -149,7 +170,7 @@ body {
             background-color: $primary-color;
         }
     }
-    
+
     .winning-message {
         display: none;
         position: fixed;
@@ -183,13 +204,119 @@ body {
             outline: none;
             border-radius: 10px;
             cursor: pointer;
-            
+
             &:hover {
                 box-shadow: 1px 1px 100px rgba($color: #ffffff, $alpha: .3);
                 background-color: black;
                 color: white;
                 border-color: white;
             }
+        }
+    }
+
+
+    .site-footer {
+        color: #645959;
+        margin-top: 1px;
+        width: 35vw;
+        font-size: 12px;
+        line-height: 2px;
+        font-family: monospace;
+
+
+        .github-link {
+            @include text-shadow;
+            margin-top: 5px;
+
+            &:hover {
+                @include easeOut;
+                background-color: burlywood;
+                padding-right: 50px;
+                transition: padding-right .5s, background-color 1s;
+            }
+
+            a {
+                @include text-shadow;
+                color: #3e4050;
+                font-family: Trebuchet MS;
+                font-size: 1rem;
+
+                &:hover {
+                    color: #000000;
+                    text-decoration: none;
+                }
+
+            }
+        }
+
+
+
+        .social-icons {
+            text-align: right;
+            padding-left: 0;
+            /* margin-bottom: 0; */
+            list-style: none;
+            margin-top: 20px;
+            transform: translate(-26%, -5%);
+
+            a {
+                box-shadow: 8px 8px 20px #2b2d3410,
+                    -8px -8px 50px #3b3d4693;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                margin-left: 6px;
+                margin-right: 0;
+                background-color: #33353d;
+                color: #818a91;
+                font-size: 16px;
+                display: inline-block;
+                text-align: center;
+                transform: translate(-5%, -5%);
+                border-radius: 100%;
+                -webkit-transition: all .2s linear;
+                -o-transition: all .2s linear;
+                transition: all .2s linear;
+
+                &:active,
+                &:focus,
+                &:hover {
+                    box-shadow: inset 8px 8px 16px #2b2d34,
+                        inset -8px -8px 16px #3b3d46;
+                    // color: rgb(119, 104, 104);
+                    background-color: #33353d;
+
+                }
+            }
+
+            li {
+                display: inline-block;
+                /* margin-bottom: 0; */
+            }
+        }
+    }
+
+
+    @media (max-width:991px) {
+        .site-footer [class^=col-] {
+            margin-bottom: 20px;
+        }
+    }
+
+    @media (max-width:767px) {
+        .social-icons li.title {
+            display: block;
+            margin-right: 0;
+            font-weight: 600;
+        }
+
+        .site-footer {
+            padding-bottom: 0;
+        }
+
+        .site-footer .copyright-text,
+        .site-footer .social-icons {
+            text-align: center;
         }
     }
 
