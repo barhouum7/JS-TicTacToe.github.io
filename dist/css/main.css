@@ -189,6 +189,16 @@ body {
         body .site-footer .social-icons a:active, body .site-footer .social-icons a:focus, body .site-footer .social-icons a:hover {
           box-shadow: inset 8px 8px 16px #2b2d34, inset -8px -8px 16px #3b3d46;
           background-color: #33353d; }
+        body .site-footer .social-icons a.facebook:hover {
+          background-color: #3b5998; }
+        body .site-footer .social-icons a.twitter:hover {
+          background-color: #00aced; }
+        body .site-footer .social-icons a.linkedin:hover {
+          background-color: #007bb6; }
+        body .site-footer .social-icons a.dribbble:hover {
+          background-color: #ea4c89; }
+        body .site-footer .social-icons a.github:hover {
+          background-color: #696c89; }
       body .site-footer .social-icons li {
         display: inline-block;
         /* margin-bottom: 0; */ }

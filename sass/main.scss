@@ -287,6 +287,26 @@ body {
                     background-color: #33353d;
 
                 }
+
+                &.facebook:hover {
+                    background-color: #3b5998
+                }
+
+                &.twitter:hover {
+                    background-color: #00aced
+                }
+
+                &.linkedin:hover {
+                    background-color: #007bb6
+                }
+
+                &.dribbble:hover {
+                    background-color: #ea4c89
+                }
+
+                &.github:hover {
+                    background-color: #696c89
+                }
             }
 
             li {
