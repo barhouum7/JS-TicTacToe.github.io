@@ -333,6 +333,11 @@ body {
                 transform: translate(0, -10%);
             }
 
+            & .github-link {
+                width: 50vw;
+                line-height: 2;
+            }
+
             & .github-link,
             & .social-icons {
                 text-align: center;

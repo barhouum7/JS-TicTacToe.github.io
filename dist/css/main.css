@@ -210,6 +210,9 @@ body {
         padding-bottom: 0; }
       body .site-footer .social-icons {
         transform: translate(0, -10%); }
+      body .site-footer .github-link {
+        width: 50vw;
+        line-height: 2; }
       body .site-footer .github-link,
       body .site-footer .social-icons {
         text-align: center;
