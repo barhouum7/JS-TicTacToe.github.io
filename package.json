@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/barhouum7/JS-TicTacToe.github.io#readme",
   "dependencies": {
-    "node-sass": "^4.14.1"
+    "node-sass": "^7.0.0"
   }
 }
